@@ -18,7 +18,7 @@ const Dialler = ({ number, setNumber }) => {
   };
 
   return (
-    <>
+    <div className="dialler">
       <input
         type="tel"
         value={number}
@@ -65,7 +65,7 @@ const Dialler = ({ number, setNumber }) => {
           </li>
         )}
       </ol>
-    </>
+    </div>
   );
 };
 

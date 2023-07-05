@@ -1,4 +1,5 @@
 import React from "react";
+import "./incoming.css";
 
 const Incoming = ({ connection, device }) => {
   const acceptConnection = () => {
@@ -8,10 +9,14 @@ const Incoming = ({ connection, device }) => {
     connection.reject();
   };
   return (
-    <>
-      <button onClick={acceptConnection}>Accept</button>
-      <button onClick={rejectConnection}>Reject</button>
-    </>
+    <div class="container">
+      <h2 class="incoming">Incoming call from</h2>
+      <h1>{connection.parameters.From}</h1>
+      <div class="buttons">
+      <button class="answer" onClick={acceptConnection}>Accept</button>
+      <button class="reject" onClick={rejectConnection}>Reject</button>
+      </div>
+    </div>
   );
 };
 

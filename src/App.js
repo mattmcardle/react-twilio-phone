@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Phone from "./Phone";
 
@@ -6,6 +6,10 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [clicked, setClicked] = useState(false);
   const identity = "phil";
+
+  useEffect(() => {
+    handleClick();
+  }, []);
 
   const handleClick = () => {
     setClicked(true);

@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "meyda": "^4.3.1",
+    "date-fns": "^2.30.0",
+    "meyda": "^5.6.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^5.0.1",
-    "twilio-client": "^1.10.0"
+    "twilio-client": "^1.10.0",
+    "util": "^0.12.5"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -5,6 +5,7 @@ module.exports = {
     apiSecret: process.env.TWILIO_API_SECRET,
     outgoingApplicationSid: process.env.TWILIO_TWIML_APP_SID,
     incomingAllow: process.env.TWILIO_ALLOW_INCOMING_CALLS === "true",
-    callerId: process.env.FROM_NUMBER
+    callerId: process.env.FROM_NUMBER,
+    fallbackNumber: process.env.FALLBACK_NUMBER
   }
 };

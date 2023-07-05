@@ -66,7 +66,7 @@ app.post("/voice/token", (req, res) => {
 app.post("/voice", (req, res) => {
   const To = req.body.To;
   const response = new VoiceResponse();
-  const dial = response.dial({ callerId: config.twilio.callerId });
+  const dial = response.dial({ callerId: config.twilio.callerId, record: true });
   dial.number(To);
   res.set("Content-Type", "text/xml");
   res.send(response.toString());
@@ -74,8 +74,12 @@ app.post("/voice", (req, res) => {
 
 app.post("/voice/incoming", (req, res) => {
   const response = new VoiceResponse();
-  const dial = response.dial({ callerId: req.body.From, answerOnBridge: true });
+  const dial = response.dial({ callerId: req.body.From, record: true, answerOnBridge: true });
   dial.client("phil");
+  if (config.twilio.fallbackNumber) {
+    // simultaneously call fallback number
+  dial.number(config.twilio.fallbackNumber);
+  }
   res.set("Content-Type", "text/xml");
   res.send(response.toString());
 });

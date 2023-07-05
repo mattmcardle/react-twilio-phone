@@ -3,6 +3,7 @@ const AccessToken = twilio.jwt.AccessToken;
 const { ChatGrant, VideoGrant, VoiceGrant } = AccessToken;
 
 const generateToken = config => {
+  console.log(JSON.stringify(config));
   return new AccessToken(
     config.twilio.accountSid,
     config.twilio.apiKey,
